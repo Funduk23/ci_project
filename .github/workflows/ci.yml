@@ -26,5 +26,14 @@ jobs:
   steps:
    - name: Checkout code
      uses: actions/checkout@v4
-   - name: Linter Actiovation
-     run: ./test_pylint
+   - name: Set up Python
+     uses: actions/setup-python@v3
+     with:
+      python-version: '3.9'
+   - name: Install Dependencies
+     run: |
+      python3 -m venv venv
+      source venv/bin/activate
+      pip install -r requirements.txt
+   - name: Linter check
+     run: pylint calculator.py
