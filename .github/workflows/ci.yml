@@ -34,7 +34,7 @@ jobs:
      run: |
       python3 -m venv venv
       source venv/bin/activate
-      pip install pylint
    - name: Linter check
      run: |
+      pip install pylint
       pylint calculator.py
