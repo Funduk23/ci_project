@@ -8,9 +8,6 @@ jobs:
   steps:
    - name: Checkout code
      uses: actions/checkout@v3
-     run: |
-      source venv/bin/activate
-      pylint calculator.py
    - name: Set up Python
      uses: actions/setup-python@v3
      with:
@@ -24,3 +21,10 @@ jobs:
      run: |
       source venv/bin/activate
       pytest
+ linter:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Check code
+     run: |
+      source venv/bin/activate
+      pylint calculator.py
