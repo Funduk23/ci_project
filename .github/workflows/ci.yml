@@ -24,16 +24,7 @@ jobs:
  linter:
   runs-on: ubuntu-latest
   steps:
-   - name: Set up Python
-     uses: actions/setup-python@v3
-     with:
-      python-version: '3.9'
-   - name: Install Dependencies
-     run: |
-      python3 -m venv venv
-      source venv/bin/activate
-      pip install pylint
-   - name: Check code
-     run: |
-      source venv/bin/activate
-      pylint calculator.py
+   - name: Checkout code
+     uses: actions/checkout@v4
+   - name: Linter Actiovation
+     run: ./test_pylint
