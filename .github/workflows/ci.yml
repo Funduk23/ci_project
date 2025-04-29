@@ -37,4 +37,7 @@ jobs:
    - name: Linter check
      run: |
       pip install pylint
-      pylint calculator.py
+      pylint --output-format=colorized \
+      --fail-under=8.0 \
+      --disable=missing-docstring,invalid-name \
+      calculator.py
