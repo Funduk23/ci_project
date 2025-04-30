@@ -1,0 +1,20 @@
+name: Update Container
+on: push
+jobs:
+ update-cont:
+  defaults:
+   run:
+    working-directory: ./pr3/flask-app
+  runs-on: ubuntu-latest
+  steps:
+   - name: Code checkout
+     uses: actions/checkout@v2
+   - name: Setup docker
+     run: |
+      apt install docker.io
+   - name: Push image
+     run: |
+      IMAGE_NAME="funduk/flasl-app:${{github.sha}}"
+      docker login -u $DOCKER_USER -p $DOCKER_PASS
+      docker build -t ${IMAGE_NAME} .
+      docker push ${IMAGE_NAME}
