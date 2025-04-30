@@ -11,8 +11,9 @@ services:
   volumes:
    - /home/kivanov/fl-postgres/data:/var/lib/postgresql/data
  web:
-  depends_on: postgresql
-  image: funduk/flask-app:v1
+  depends_on:
+   - postgres-flask
+  image: funduk23/flask-app:v1
   ports:
    - "5000:5000"
   restart: always
