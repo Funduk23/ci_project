@@ -4,7 +4,7 @@ jobs:
  update-cont:
   defaults:
    run:
-    working-directory: ./pr3/flask-app
+    working-directory: pr3/flask-app
   runs-on: ubuntu-latest
   steps:
    - name: Code checkout
