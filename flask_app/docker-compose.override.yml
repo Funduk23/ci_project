@@ -1,8 +1,0 @@
-version: '3.9'
-services:
- postgres-flask:
-  container_name: fl-db
- web:
-  container_name: fl-app
-  ports:
-   - "8080:5000"
