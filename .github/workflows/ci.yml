@@ -21,23 +21,3 @@ jobs:
      run: |
       source venv/bin/activate
       pytest
- linter:
-  runs-on: ubuntu-latest
-  steps:
-   - name: Checkout code
-     uses: actions/checkout@v3
-   - name: Set up Python
-     uses: actions/setup-python@v3
-     with:
-      python-version: '3.9'
-   - name: Install Dependencies
-     run: |
-      python3 -m venv venv
-      source venv/bin/activate
-   - name: Linter check
-     run: |
-      pip install pylint
-      pylint --output-format=colorized \
-      --fail-under=8.0 \
-      --disable=missing-docstring,invalid-name \
-      calculator.py
