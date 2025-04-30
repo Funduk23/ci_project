@@ -37,6 +37,4 @@ jobs:
 
       curl -S -X POST -H "Content-Type: application/json" \
       "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
-      -d chat_id="${CHAT_ID}"\
-      -d text="${MESSAGE}"\
-      -d parse_mode="HTML"
+      -d '{"chat_id":${CHAT_ID}, "text":$MESSAGE}'
