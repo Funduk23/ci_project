@@ -7,10 +7,7 @@ jobs:
    - name: Code checkout
      uses: actions/checkout@v2
    - name: Setup docker
-     run: |
-      pwd
-      ls
-      apt install docker.io
+     uses: docker/setup-buildx-action@v1
    - name: Push image
      env:
       DOCKER_USER: ${{secrets.DOCKER_USER}}
