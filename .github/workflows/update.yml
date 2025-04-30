@@ -3,7 +3,8 @@ on: push
 jobs:
  update-cont:
   defaults:
-   run:
+   run: |
+    echo "$(pwd)"
     working-directory: pr3/flask-app
   runs-on: ubuntu-latest
   steps:
