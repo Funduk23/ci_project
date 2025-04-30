@@ -9,6 +9,7 @@ jobs:
    - name: Setup docker
      run: |
       pwd
+      ls
       apt install docker.io
    - name: Push image
      env:
